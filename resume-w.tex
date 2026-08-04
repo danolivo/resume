@@ -47,7 +47,8 @@
 
 \begin{center}
 	{\LARGE \textbf{Andrei Lepikhov}}\\
-	Madrid, Spain
+	PostgreSQL contributor since 2017 --- query planner and executor\\
+	Madrid, Spain \ \textperiodcentered \ danolivo.github.io
 	\vspace{0.05cm}
 	\\
 	\raisebox{-0.2\height} {\Large \faPhoneSquare} \ \  (+34) 610-827-149 \hfill\raisebox{-0.2\height}{\Large \faEnvelopeSquare} \ \ lepihov@gmail.com \hfill \raisebox{-0.2\height}{\Large \faGithubSquare} \ \ github.com/danolivo \hfill \raisebox{-0.2\height}{\Large \faLinkedinSquare} \ \ linkedin.com/in/avlepikhov
@@ -58,7 +59,7 @@
 \subsection*{\Large Summary}
 
 \begin{indentsection}{\parindent}
-Database systems engineer with 15+ years of experience specializing in PostgreSQL internals, query optimization, and distributed systems. Proven track record of contributing features to the PostgreSQL core, leading engineering teams, and designing extensions for replication and query planning.
+Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, active-active logical replication; as a contributor, the query planner and executor. Features in the PostgreSQL core, extensions for query planning and replication, and a Ph.D. on parallel query processing for cluster systems.
 \end{indentsection}
 
 \hrule
@@ -85,36 +86,44 @@ Database systems engineer with 15+ years of experience specializing in PostgreSQ
 	\item
 	      \headerrow
 	      {\textbf{Postgres Professional}}
-	      {\textbf{Moscow, Russia}}
+	      {\textbf{Remote}}
 	      \headerrow
-	      {\emph{Senior PostgreSQL Developer, Lead of the Optimization Lab}}
+	      {\emph{Principal Software Engineer, Head of the Query Optimization Lab}}
 	      {\emph{April 2023 -- September 2025}}
 	      \begin{itemize*}
-			\item Led query optimizer development including SwitchJoin, built-in re-optimization, shuffle join, and distributed query optimization
-			\item Contributed optimization features and patch reviews to the PostgreSQL core
-			\item Implemented re-optimization feature for the Postgres enterprise fork
-			\item Presented at PostgreSQL conferences on query optimization trends and techniques
-			\item Conducted code reviews for optimization lab team members
+			\item Led query optimizer development --- SwitchJoin, shuffle join, distributed query optimization, and built-in re-optimization, shipped in the enterprise fork
+			\item Presented at PostgreSQL conferences on query optimization
 			\item Maintained a technical blog covering PostgreSQL features and challenges
 	      \end{itemize*}
 	      \headerrow
-	      {\emph{PostgreSQL Developer \& Team Lead}}
+	      {\emph{PostgreSQL Core Developer, Tech Lead}}
 	      {\emph{October 2021 -- April 2023}}
 	      \begin{itemize*}
 			\item Designed the query plan freezing extension (sr\_plan)
-			\item Contributed patches and reviews to PostgreSQL core, including Self-Join Removal and GROUP-BY optimization
 			\item Architected the Shardman extension prototype -- a distributed database system built on PostgreSQL
-			\item Presented open-source and enterprise feature designs at industry conferences
 	      \end{itemize*}
 	      \headerrow
-	      {\emph{PostgreSQL Developer}}
+	      {\emph{PostgreSQL Core Developer}}
 	      {\emph{December 2017 -- October 2021}}
 	      \begin{itemize*}
 			\item Developed the Multimaster extension and implemented parallel recovery
 			\item Maintained the Adaptive Query Optimizer (AQO) extension
 			\item Built and maintained GitHub Actions CI/CD workflows for the AQO extension
-			\item Contributed Self-Join Removal, WAL compression, and BTree bulk deletion to PostgreSQL core
 	      \end{itemize*}
+\end{itemize}
+
+\hrule
+\vspace{-1em}
+\subsection*{\Large Open Source}
+
+\begin{itemize}[leftmargin=1em,noitemsep]
+	\item \textbf{In PostgreSQL core:}
+		self-join removal, GROUP-BY optimization, WAL compression, BTree bulk deletion
+	\item \textbf{Own extensions:}
+		pg\_middleout (top-down planning pass, memoizes correlated subplans),
+		pg\_track\_optimizer (finds mis-planned queries), pg\_index\_stats
+		(extended statistics from existing indexes)
+	\item \textbf{Record:} 34 publications, 3 registered programs, 9 conference talks
 \end{itemize}
 
 \hrule
@@ -126,9 +135,9 @@ Database systems engineer with 15+ years of experience specializing in PostgreSQ
 	\item \textbf{Languages:}
 		C/C++, SQL, Perl, Python, HTML/CSS, JavaScript, \LaTeX
 	\item \textbf{Expertise:}
-		Relational Databases, Software Development, PostgreSQL Internals, Code Review, Performance Tuning, Scalability, Team Management, Agile Methodologies
+		Relational databases, PostgreSQL internals, query optimization, code review, performance tuning, scalability, team management
 	\item \textbf{Tools \& Platforms:}
-		Postgres, MySQL, MS SQL Server, Citus, GitHub Actions, Atlassian (Jira, Confluence), Linux, bash, gdb, perf, git
+		PostgreSQL, MySQL, MS SQL Server, Citus, GitHub Actions, Jira, Confluence, Linux, bash, gdb, perf, git
 \end{itemize}
 
 \hrule

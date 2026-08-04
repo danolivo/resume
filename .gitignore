@@ -1,0 +1,14 @@
+# LaTeX build artefacts. The sources and the built PDFs are tracked; everything
+# pdflatex writes alongside them is not.
+*.aux
+*.log
+*.out
+*.dvi
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+.DS_Store
