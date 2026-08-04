@@ -1,0 +1,65 @@
+name: Build the CV
+
+# The PDFs are tracked in the repository because danolivo.github.io links
+# straight at resume-w.pdf, so they have to stay in step with the sources.
+# Rebuilding by hand is easy to forget; this does it on every push that touches
+# a .tex file and commits the result back.
+on:
+  push:
+    branches: [master]
+    paths:
+      - "**.tex"
+      - .github/workflows/build.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Never two of these at once: each run may push a commit.
+concurrency:
+  group: build-cv
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile with LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            resume-w.tex
+            resume.tex
+
+      # A CV that quietly grows onto a second page is the failure mode this
+      # repository actually hit. pdfinfo, not a regex over the file: the page
+      # count lives in a compressed object and grep finds nothing.
+      - name: Check each CV is still one page
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          status=0
+          for f in resume-w.pdf resume.pdf; do
+            pages=$(pdfinfo "$f" | awk '/^Pages:/ {print $2}')
+            echo "$f: $pages page(s)"
+            if [ "$pages" != "1" ]; then
+              echo "::error file=$f::$f came out $pages pages; trim it or drop this check"
+              status=1
+            fi
+          done
+          exit $status
+
+      - name: Commit the rebuilt PDFs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resume-w.pdf resume.pdf
+          if git diff --cached --quiet; then
+            echo "PDFs already match the sources, nothing to commit"
+            exit 0
+          fi
+          git commit -m "Rebuild the CV PDFs from ${GITHUB_SHA:0:7}"
+          # The push filter above only watches .tex, so this commit cannot
+          # trigger another run.
+          git push
