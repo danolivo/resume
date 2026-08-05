@@ -59,7 +59,7 @@
 \subsection*{\Large Summary}
 
 \begin{indentsection}{\parindent}
-Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, active-active logical replication; as a contributor, the query planner and executor. Features in the PostgreSQL core, extensions for query planning and replication, and a Ph.D. on parallel query processing for cluster systems.
+Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, active-active logical replication; as a contributor, the query planner and executor. Features in the PostgreSQL core, and extensions for query planning and replication.
 \end{indentsection}
 
 \hrule
@@ -98,8 +98,8 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 	      {\emph{PostgreSQL Core Developer, Tech Lead}}
 	      {\emph{October 2021 -- April 2023}}
 	      \begin{itemize*}
+			\item Architect of Shardman, a PostgreSQL-based distributed DBMS: proposed and prototyped substantially all of its query optimization and distributed execution features
 			\item Designed the query plan freezing extension (sr\_plan)
-			\item Architected the Shardman extension prototype -- a distributed database system built on PostgreSQL
 	      \end{itemize*}
 	      \headerrow
 	      {\emph{PostgreSQL Core Developer}}
@@ -119,7 +119,7 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 		PostgreSQL 12--19 --- including Self-Join Elimination (18), OR-clause-to-array
 		transformation (18) and GROUP BY key reordering (17)
 	\item \textbf{Proposed upstream, carried in enterprise forks:} WAL compression, BTree
-		bulk deletion, pre-sorted outer path on an ORDER BY prefix
+		bulk deletion, pre-sorted outer paths
 	\item \textbf{Own extensions:} pg\_middleout (top-down planning pass, memoizes
 		correlated subplans), pg\_track\_optimizer (finds mis-planned queries),
 		pg\_index\_stats (extended statistics from existing indexes)
@@ -135,7 +135,7 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 	\item \textbf{Languages:}
 		C/C++, SQL, Perl, Python, \LaTeX
 	\item \textbf{Expertise:}
-		Relational databases, PostgreSQL internals, query optimization, performance tuning, scalability, mentoring and code review
+		Relational databases, PostgreSQL internals, query optimization, performance tuning, mentoring and code review
 	\item \textbf{Tools \& Platforms:}
 		PostgreSQL, MySQL, MS SQL Server, Citus, GitHub Actions, Linux, bash, gdb, perf, git
 \end{itemize}
