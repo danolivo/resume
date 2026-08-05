@@ -93,7 +93,6 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 	      \begin{itemize*}
 			\item Led query optimizer development --- SwitchJoin, shuffle join, distributed query optimization, and built-in re-optimization, shipped in the enterprise fork
 			\item Presented at PostgreSQL conferences on query optimization
-			\item Maintained a technical blog covering PostgreSQL features and challenges
 	      \end{itemize*}
 	      \headerrow
 	      {\emph{PostgreSQL Core Developer, Tech Lead}}
@@ -108,7 +107,6 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 	      \begin{itemize*}
 			\item Developed the Multimaster extension and implemented parallel recovery
 			\item Maintained the Adaptive Query Optimizer (AQO) extension
-			\item Built and maintained GitHub Actions CI/CD workflows for the AQO extension
 	      \end{itemize*}
 \end{itemize}
 
@@ -117,12 +115,14 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 \subsection*{\Large Open Source}
 
 \begin{itemize}[leftmargin=1em,noitemsep]
-	\item \textbf{In PostgreSQL core:}
-		self-join removal, GROUP-BY optimization, WAL compression, BTree bulk deletion
-	\item \textbf{Own extensions:}
-		pg\_middleout (top-down planning pass, memoizes correlated subplans),
-		pg\_track\_optimizer (finds mis-planned queries), pg\_index\_stats
-		(extended statistics from existing indexes)
+	\item \textbf{PostgreSQL core:} author of 43 commits and reviewer on 67, across
+		PostgreSQL 12--19 --- including Self-Join Elimination (18), OR-clause-to-array
+		transformation (18) and GROUP BY key reordering (17)
+	\item \textbf{Proposed upstream, carried in enterprise forks:} WAL compression, BTree
+		bulk deletion, pre-sorted outer path on an ORDER BY prefix
+	\item \textbf{Own extensions:} pg\_middleout (top-down planning pass, memoizes
+		correlated subplans), pg\_track\_optimizer (finds mis-planned queries),
+		pg\_index\_stats (extended statistics from existing indexes)
 	\item \textbf{Record:} 34 publications, 3 registered programs, 9 conference talks
 \end{itemize}
 
@@ -133,11 +133,11 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 \hyphenpenalty=1000
 \begin{itemize}[leftmargin=1em,noitemsep]
 	\item \textbf{Languages:}
-		C/C++, SQL, Perl, Python, HTML/CSS, JavaScript, \LaTeX
+		C/C++, SQL, Perl, Python, \LaTeX
 	\item \textbf{Expertise:}
-		Relational databases, PostgreSQL internals, query optimization, code review, performance tuning, scalability, team management
+		Relational databases, PostgreSQL internals, query optimization, performance tuning, scalability, mentoring and code review
 	\item \textbf{Tools \& Platforms:}
-		PostgreSQL, MySQL, MS SQL Server, Citus, GitHub Actions, Jira, Confluence, Linux, bash, gdb, perf, git
+		PostgreSQL, MySQL, MS SQL Server, Citus, GitHub Actions, Linux, bash, gdb, perf, git
 \end{itemize}
 
 \hrule
