@@ -59,7 +59,7 @@
 \subsection*{\Large Summary}
 
 \begin{indentsection}{\parindent}
-Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, active-active logical replication; as a contributor, the query planner and executor. Features in the PostgreSQL core, and extensions for query planning and replication.
+Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, active-active logical replication and cross-node data consistency; upstream, the query planner and executor.
 \end{indentsection}
 
 \hrule
@@ -80,8 +80,10 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 	      {\emph{Staff Software Engineer}}
 	      {\emph{September 2025 -- Present}}
 	      \begin{itemize*}
-			\item Designed and implemented features enabling active-active logical replication across PostgreSQL clusters
-			\item Led the architectural redesign of the Spock extension, eliminating dependencies on core Postgres patches
+			\item \textbf{Replication architecture:} led the redesign of Spock, pgEdge's active-active replication extension, removing its dependency on a patched PostgreSQL core; conflict handling, DDL replication, cluster design
+			\item \textbf{Data consistency at scale:} own the algorithms and correctness of ACE, which finds and repairs data divergence across nodes; made comparison 3.4--3.7$\times$ faster on billion-row tables, cut memory by up to 80\%
+			\item \textbf{Performance engineering:} built a reproducible cloud benchmarking methodology for release validation
+			\item \textbf{Technical leadership:} design specs, community-standard code review, fixes for customer escalations
 	      \end{itemize*}
 	\item
 	      \headerrow
@@ -92,7 +94,6 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 	      {\emph{April 2023 -- September 2025}}
 	      \begin{itemize*}
 			\item Led query optimizer development --- SwitchJoin, shuffle join, distributed query optimization, and built-in re-optimization, shipped in the enterprise fork
-			\item Presented at PostgreSQL conferences on query optimization
 	      \end{itemize*}
 	      \headerrow
 	      {\emph{PostgreSQL Core Developer, Tech Lead}}
@@ -105,8 +106,7 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 	      {\emph{PostgreSQL Core Developer}}
 	      {\emph{December 2017 -- October 2021}}
 	      \begin{itemize*}
-			\item Developed the Multimaster extension and implemented parallel recovery
-			\item Maintained the Adaptive Query Optimizer (AQO) extension
+			\item Developed the Multimaster extension (parallel recovery); maintained AQO, the adaptive query optimizer
 	      \end{itemize*}
 \end{itemize}
 
@@ -115,53 +115,34 @@ Database systems engineer and PostgreSQL contributor since 2017: at pgEdge, acti
 \subsection*{\Large Open Source}
 
 \begin{itemize}[leftmargin=1em,noitemsep]
-	\item \textbf{PostgreSQL core:} author of 43 commits and reviewer on 67, across
-		PostgreSQL 12--19 --- including Self-Join Elimination (18), OR-clause-to-array
-		transformation (18) and GROUP BY key reordering (17)
+	\item \textbf{PostgreSQL core:} patch author and reviewer since 2017 (releases 12--19), including
+		Self-Join Elimination (18), OR-to-ANY transformation (18), GROUP BY key reordering (17)
 	\item \textbf{Proposed upstream, carried in enterprise forks:} WAL compression, BTree
 		bulk deletion, pre-sorted outer paths
 	\item \textbf{Own extensions:} pg\_middleout (top-down planning pass, memoizes
 		correlated subplans), pg\_track\_optimizer (finds mis-planned queries),
 		pg\_index\_stats (extended statistics from existing indexes)
-	\item \textbf{Record:} 34 publications, 3 registered programs, 9 conference talks
 \end{itemize}
 
 \hrule
 \vspace{-1em}
-\subsection*{\Large Core Competencies}
+\subsection*{\Large Community \& Writing}
+
+\begin{itemize}[leftmargin=1em,noitemsep]
+	\item \textbf{Blog:} ``Conserving CPU's cycles'' (danolivo.substack.com) on PostgreSQL; Russian edition on Habr (@danolivo)
+	\item \textbf{Talks:} regular speaker at PostgreSQL conferences (PGConf.EU, PGDay Israel and others)
+	\item \textbf{Research:} peer-reviewed publications on distributed databases and computational methods
+\end{itemize}
+
+\hrule
+\vspace{-1em}
+\subsection*{\Large Skills \& Education}
 
 \hyphenpenalty=1000
 \begin{itemize}[leftmargin=1em,noitemsep]
-	\item \textbf{Languages:}
-		C/C++, SQL, Perl, Python, \LaTeX
-	\item \textbf{Expertise:}
-		Relational databases, PostgreSQL internals, query optimization, performance tuning, mentoring and code review
-	\item \textbf{Tools \& Platforms:}
-		PostgreSQL, MySQL, MS SQL Server, Citus, GitHub Actions, Linux, bash, gdb, perf, git
-\end{itemize}
-
-\hrule
-\vspace{-1em}
-\subsection*{\Large Education}
-
-\begin{itemize}[leftmargin=1em]
-	\parskip=0.1em
-
-	\item
-	      \headerrow
-	      {\textbf{Lomonosov Moscow State University (MSU)}}
-	      {\textbf{Moscow, Russia}}
-	      \headerrow
-	      {\emph{Ph.D. Computer Science} (Distributed Databases)}
-	      {\emph{October 2005 -- March 2009}}
-	\item
-	      \headerrow
-	      {\textbf{Chelyabinsk State University (CSU)}}
-	      {\textbf{Chelyabinsk, Russia}}
-	      \headerrow
-	      {\emph{M.S. in Computer Science}}
-	      {\emph{September 2000 -- June 2005}}
-
+	\item \textbf{Languages \& tools:} C, \CPP, Go, SQL, Python, Perl; Linux, gdb, perf, git, GitHub Actions, Google Cloud
+	\item \headerrow{\textbf{Ph.D. Computer Science} (Distributed Databases), Lomonosov Moscow State University}{\emph{2009}}
+	\item \headerrow{\textbf{M.S. Computer Science}, Chelyabinsk State University}{\emph{2005}}
 \end{itemize}
 
 \end{document}
